@@ -1,3 +1,19 @@
+/*Variables
+Colores*/
+html {
+  box-sizing: borde-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
 .contenedor {
   max-width: 1100px;
   margin: 0 auto;
@@ -21,7 +37,7 @@
   display: block;
   position: absolute;
   right: 0;
-  background-color: #e1e1e1;
+  background-color: #FFFFFF;
   padding: 1rem;
   max-width: 400px;
 }
@@ -31,11 +47,59 @@
 }
 
 .carrito-compras:hover .boton {
-  background-color: #33c3f0;
+  background-color: #741D51;
   padding: .5rem 1rem;
   margin-top: 1rem;
   display: block;
-  color: #FFF;
+  color: #FFFFFF;
   text-align: center;
   text-decoration: none;
+}
+
+.hero {
+  min-height: 24rem;
+  background-size: cover;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/hero.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.hero .contenido-hero {
+  flex: 1;
+}
+
+.hero .contenido-hero h2 {
+  font-weight: 400;
+  font-size: 2.4rem;
+}
+
+.hero .contenido-hero p {
+  font-size: 1.2rem;
+}
+
+.hero .contenido-hero form {
+  position: relative;
+  width: 40%;
+}
+
+.hero .contenido-hero form input[type="submit"] {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-image: url("../img/lupa.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 3rem;
+  height: 3rem;
+  display: block;
+  text-indent: -9999px;
+  border: none;
+  cursor: pointer;
+}
+
+.hero .contenido-hero form input[type="text"] {
+  width: 100%;
 }

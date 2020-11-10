@@ -1,0 +1,19 @@
+@mixin boton($color) {
+    background-color: $secundario;
+    padding: .5rem 1rem;
+    margin-top: 1rem;
+    display: block;
+    color : $blanco;
+    text-align: center;
+    text-decoration: none;
+}
+
+@mixin box-sizing($box-model) {
+    box-sizing: $box-model;
+}
+
+@mixin background-imagen($imagen) {
+    background-image: url($imagen);
+    background-repeat: no-repeat;
+    background-position: center center;
+}

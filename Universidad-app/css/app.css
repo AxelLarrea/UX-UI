@@ -1,12 +1,10 @@
-/*Variables
-Colores*/
 html {
-  box-sizing: borde-box;
+  box-sizing: border-box;
 }
 
 *,
-*::after,
-*::before {
+*:after,
+*:before {
   box-sizing: inherit;
 }
 
@@ -23,6 +21,10 @@ body {
   display: none;
 }
 
+.centrado {
+  text-align: center;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -33,25 +35,30 @@ body {
   padding: 1.4rem 0;
 }
 
-.carrito-compras:hover {
+.carrito-compras {
+  position: relative;
+}
+
+.carrito-compras .contenido {
+  display: none;
+}
+
+.carrito-compras:hover .contenido {
   display: block;
   position: absolute;
   right: 0;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 1rem;
-  max-width: 400px;
+  max-width: 430px;
+  border: 1px solid #e1e1e1;
 }
 
-.carrito-compras:hover img {
-  max-width: 150px;
-}
-
-.carrito-compras:hover .boton {
-  background-color: #741D51;
+.carrito-compras:hover .contenido .boton {
+  background-color: #741d51;
   padding: .5rem 1rem;
   margin-top: 1rem;
   display: block;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
   text-decoration: none;
 }
@@ -59,7 +66,7 @@ body {
 .hero {
   min-height: 24rem;
   background-size: cover;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   align-items: center;
   background-image: url("../img/hero.jpg");
@@ -72,7 +79,7 @@ body {
 }
 
 .hero .contenido-hero h2 {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 2.4rem;
 }
 
@@ -82,22 +89,29 @@ body {
 
 .hero .contenido-hero form {
   position: relative;
-  width: 40%;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero .contenido-hero form {
+    width: 40%;
+  }
 }
 
 .hero .contenido-hero form input[type="submit"] {
   position: absolute;
   right: 0;
-  top: 0;
+  top: .1rem;
+  text-decoration: none;
+  border: none;
+  text-indent: -9999px;
+  display: block;
   background-image: url("../img/lupa.png");
   background-repeat: no-repeat;
   background-position: center center;
-  width: 3rem;
-  height: 3rem;
-  display: block;
-  text-indent: -9999px;
-  border: none;
-  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: calc( 3rem - 10px);
+  height: calc( 3rem - 10px);
 }
 
 .hero .contenido-hero form input[type="text"] {
@@ -108,8 +122,8 @@ body {
 .barra {
   min-height: 6rem;
   padding: 1rem;
-  background: linear-gradient(to right, #741D51 0%, #E44E51 100%);
-  color: #FFFFFF;
+  background: linear-gradient(to right, #741d51 0%, #e44e52 100%);
+  color: #ffffff;
 }
 
 .barra .iconos {
@@ -155,21 +169,17 @@ body {
   background-position: center center;
 }
 
-.encabezado {
-  text-align: center;
-}
-
 .cursos {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .cursos .curso {
-  flex: 0 1 calc(50%- 1rem);
-  border: 1px solid #828282;
+  flex: 0 1 calc(50% - 1rem);
+  background-color: #ffffff;
   margin-bottom: 1rem;
-  background-color: #FFFFFF;
   border: 1px solid #e1e1e1;
 }
 
@@ -190,7 +200,7 @@ body {
 }
 
 .cursos .curso .info-curso {
-  padding: 1rem;
+  padding: 1rem 1rem;
 }
 
 .cursos .curso .info-curso h4 {
@@ -210,7 +220,7 @@ body {
 .cursos .curso .info-curso .precio .oferta {
   font-size: 1.4rem;
   font-weight: 700;
-  color: red;
+  color: #e44e52;
 }
 
 .cursos .curso .info-curso .boton {
@@ -218,13 +228,13 @@ body {
   padding: .5rem 1rem;
   margin-top: 1rem;
   display: block;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
   text-decoration: none;
 }
 
 .footer {
-  border-top: 1px solid #828282;
+  border-top: 1px solid #6e6e6a;
   margin-top: 1rem;
   padding-top: 2rem;
 }
@@ -246,6 +256,12 @@ body {
   margin-bottom: 1rem;
 }
 
+@media only screen and (min-width: 480px) {
+  .menu {
+    flex: 1;
+  }
+}
+
 @media only screen and (min-width: 1024px) {
   .menu {
     flex: 0 1 calc(30% - 1rem);
@@ -253,7 +269,7 @@ body {
 }
 
 .menu a {
-  color: black;
+  color: #111111;
   text-decoration: none;
-  margin-bottom: 5px;
+  margin-bottom: .5rem;
 }

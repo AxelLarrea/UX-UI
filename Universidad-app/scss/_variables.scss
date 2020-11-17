@@ -1,13 +1,18 @@
-/*Variables
-Colores*/
+//Variables
+//colores
 $principal : #33C3F0;
-$secundario : #741D51;
-$terciario : #E44E51;
-$blanco : #FFFFFF;
-$gris : #9b9b9b;
+$secundario: #741d51;
+$terciario: #e44e52;
+$blanco: #ffffff;
+$gris: #888883;
+$negro: #111111;
+// $color1: #79295a;
+// $color2:#380625;
 
-$fuente_principal : 'Raleway', sans-serif;
+$fuente_princial: 'Raleway', sans-serif;
 
-$desktop : 1024px;
-$tablet : 768px;
-$telefono : 480px;
+// variables para los tamaños de MEDIA QUERIES
+
+$telefono: 480px;
+$tablet: 768px;
+$desktop: 1024px;

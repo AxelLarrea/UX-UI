@@ -1,20 +1,21 @@
 @import 'variables';
 @import 'mixins';
 
-
 html {
-    @include box-sizing(borde-box);
+    @include box-sizing(border-box);
 }
 
 *,
-*::after,
-*::before {
-    @include box-sizing(inherit);
+*:after,
+*:before {
+    @include box-sizing(inherit)
 }
 
+
 body {
-    font-family: $fuente_principal;
+    font-family:$fuente_princial;
 }
+
 
 .contenedor {
     max-width: 1100px;
@@ -25,31 +26,39 @@ body {
     display: none;
 }
 
+.centrado {
+    text-align: center;
+}
+
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-  .logo {
+    .logo {
         padding: 1.4rem 0;
-  }
+    }
 }
 
 .carrito-compras {
-    &:hover {
-        display: block;
+    position: relative;
+
+    .contenido {
+        display: none;
+    }
+    
+     &:hover .contenido {
+        display:block;
         position: absolute;
         right: 0;
         background-color: $blanco;
-        padding: 1rem;
-        max-width: 400px;
-
-        img {
-            max-width: 150px;
-        }
+        padding:  1rem;
+        max-width: 430px;
+        border: 1px solid #e1e1e1;
 
         .boton {
-            @include boton($secundario);
+           @include boton($secundario);
         }
     }
 }
@@ -61,12 +70,12 @@ body {
     display: flex;
     align-items: center;
     @include background-imagen('../img/hero.jpg');
-
+    
     .contenido-hero {
-        flex: 1;
-        
+        flex:1;
+
         h2 {
-            font-weight: 400;
+            font-weight: 600;
             font-size: 2.4rem;
         }
 
@@ -76,20 +85,27 @@ body {
 
         form {
             position: relative;
-            width: 40%;
+        
 
-            input[type="submit"] {
+            @include tablet() {
+                width: 40%;
+            }
+
+
+            input[type="submit"]{
                 position: absolute;
                 right: 0;
-                top: 0;
-
-                @include background-imagen('../img/lupa.png');
-                width: 3rem;
-                height: 3rem;
-                display: block;
+                top:.1rem;
+                text-decoration: none;
+                border:none;
                 text-indent: -9999px;
-                border: none;
-                cursor: pointer;
+                display: block;
+                @include background-imagen('../img/lupa.png');
+                background-repeat: no-repeat;
+                background-position: center center;
+                width: calc( 3rem - 10px);
+                height: calc( 3rem - 10px);
+
             }
 
             input[type="text"]{
@@ -99,6 +115,7 @@ body {
         }
     }
 }
+
 
 .barra {
     min-height: 6rem;
@@ -110,7 +127,6 @@ body {
         display: flex;
         flex-direction: column;
         flex: 1;
-
         @include desktop() {
             flex-direction: row;
         }
@@ -120,7 +136,6 @@ body {
             background-position: 5% center !important;
             background-size: 2.4rem;
             text-align: center;
-
 
             @include tablet {
                 background-position: left center !important;
@@ -141,15 +156,11 @@ body {
     }
 }
 
-.encabezado{
-    text-align: center;
-}
-
 .cursos {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
+    align-items: flex-start;
 
     .curso {
 
@@ -157,9 +168,7 @@ body {
             width: 100%;
         }
 
-        flex: 0 1 calc(50%- 1rem);
-        border: 1px solid darken($gris, 10);
-        margin-bottom: 1rem;
+        flex :0 1 calc(50% - 1rem );       
 
         @include tablet() {
             flex: 0 1 calc(33% - 1rem);
@@ -170,32 +179,32 @@ body {
         }
 
         background-color: $blanco;
+        margin-bottom: 1rem;
         border: 1px solid #e1e1e1;
-
         .info-curso {
-            padding: 1rem;
-
+            padding: 1rem 1rem;
+    
             h4 {
                 margin: 0;
                 font-size: 1.2rem;
+    
             }
-
+    
             .precio {
                 display: flex;
                 justify-content: space-between;
-
+    
                 .regular {
                     text-decoration: line-through;
                 }
-
+    
                 .oferta {
                     font-size: 1.4rem;
                     font-weight: 700;
-                    color: red;
+                    color: $terciario;
                 }
-
             }
-
+    
             .boton {
                 @include boton($principal)
             }
@@ -205,30 +214,40 @@ body {
 
 
 .footer {
-    border-top: 1px solid darken($gris, 10);
+    border-top: 1px solid darken( $gris, 10);
     margin-top: 1rem;
     padding-top: 2rem;
 
     .contenedor-footer {
         display: flex;
         flex-direction: column;
+
         @include telefono() {
             flex-direction: row;
         }
     }
+
 }
 
 .menu {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
+
+    @include telefono() {
+        flex: 1
+    }
+
     @include desktop() {
         flex: 0 1 calc(30% - 1rem);
+
     }
 
     a {
-        color: black;
+        color: $negro;
         text-decoration: none;
-        margin-bottom: 5px;
+        margin-bottom: .5rem;
     }
 }
+
+   
